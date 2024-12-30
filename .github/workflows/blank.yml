@@ -1,0 +1,32 @@
+// A simple React app with HashRouter (React-specific example for Arweave compatibility)
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom';
+
+const Home = () => (
+  <div>
+    <h1>Welcome to Arweave-Compatible React App</h1>
+    <p>This app is configured to work seamlessly on Arweave.</p>
+    <Link to="/about">Go to About</Link>
+  </div>
+);
+
+const About = () => (
+  <div>
+    <h1>About This App</h1>
+    <p>This is an example of a React app using HashRouter for client-side routing.</p>
+    <Link to="/">Back to Home</Link>
+  </div>
+);
+
+const App = () => (
+  <Router>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route path="/about" component={About} />
+    </Switch>
+  </Router>
+);
+
+ReactDOM.render(<App />, document.getElementById('root'));
